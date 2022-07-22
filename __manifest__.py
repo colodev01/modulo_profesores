@@ -9,7 +9,7 @@
         Gestionar profesores y materias
     """,
 
-    'author': "My Company",
+    'author': "ADEN",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
