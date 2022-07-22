@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "modulo_profesores",
+    'name': "Escuela",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Gestion de Profesores""",
 
     'description': """
-        Long description of module's purpose
+        Gestionar profesores y materias
     """,
 
     'author': "My Company",
@@ -25,11 +24,9 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/escuela_profesor_view.xml'
+        'views/escuela_materia_view.xml'
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
+    'installable': True,
+    'application': True
 }

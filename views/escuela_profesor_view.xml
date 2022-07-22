@@ -1,0 +1,57 @@
+<odoo>
+    <!--Profesor Form view-->
+    <record id="escuela_profesor_form_view" model="ir.ui.view">
+        <field name="name">Profesor Form</field>
+        <field name="model">profesor</field>
+        <field name="arch" type="xml">
+            <form string="Profesor Form">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="edad"/>
+                    </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+
+    <!--Profesor Tree view-->
+    <record id="escuela_profesor_tree_view" model="ir.ui.view">
+        <field name="name">Profesor Tree</field>
+        <field name="model">profesor</field>
+        <field name="arch" type="xml">
+            <tree string="Profesor Tree">
+                <field name="nombre"/>
+                <field name="edad"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Profesor Action view-->
+    <record id="escuela_profesor_action_view" model="ir.actions.act_window">
+        <field name="name"></field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">profesor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Crear nuevos profesores
+            </p>
+        </field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="escuela_root" name="Profesores" sequence="0"/>
+    <menuitem id="escuela_profesor"
+              name="profesor"
+              sequence="1"
+              parent="profesores_root"
+              action="action_profesor"/>
+
+</odoo>
+
+
+
+
+
+

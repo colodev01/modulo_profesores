@@ -1,0 +1,49 @@
+<odoo>
+    <!--Materia Form view-->
+    <record id="escuela_materia_form_view" model="ir.ui.view">
+        <field name="name">Materia Form</field>
+        <field name="model">materia</field>
+        <field name="arch" type="xml">
+            <form string="materia Form">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="edad"/>
+                    </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+
+    <!--materia Tree view-->
+    <record id="escuela_materia_tree_view" model="ir.ui.view">
+        <field name="name">materia Tree</field>
+        <field name="model">materia</field>
+        <field name="arch" type="xml">
+            <tree string="materia Tree">
+                <field name="nombre"/>
+                <field name="edad"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--materia Action view-->
+    <record id="escuela_materia_action_view" model="ir.actions.act_window">
+        <field name="name"></field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">materia</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Crear nuevas materias
+            </p>
+        </field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="materia"
+              name="Materia"
+              sequence="1"
+              parent="materias_root"
+              action="action_materia"/>
+</odoo>
