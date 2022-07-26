@@ -10,10 +10,11 @@ class EscuelaProfesor(models.Model):
     edad = fields.Integer()
     legajo = fields.Char("Legajo")
 
-    materia_id = fields.Many2one(
+    materia_id = fields.Many2many(
         comodel_name="escuela.materia", string="Materia"
     )
 
+    # Implementar en metodo create() auto-incremento de variable legajo
     @api.constrains("legajo")
     def check_legajo(self):
         legajos = self.search([]).mapped("legajo")

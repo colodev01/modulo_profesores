@@ -24,7 +24,7 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/escuela_profesor_view.xml'
+        'views/escuela_profesor_view.xml',
         'views/escuela_materia_view.xml'
     ],
     'installable': True,

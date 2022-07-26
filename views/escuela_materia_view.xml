@@ -43,7 +43,6 @@
     <!--Menus-->
     <menuitem id="escuela_materia_menuitem"
               name="Materia"
-              parent="materias_root"
               action="action_escuela_materia"
               sequence="1"/>
 </odoo>
