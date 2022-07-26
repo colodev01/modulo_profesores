@@ -44,7 +44,7 @@
 
     <!--Menus-->
     <menuitem id="escuela_root" name="Escuela" sequence="0"/>
-    <menuitem id="escuela_profesor"
+    <menuitem id="escuela_profesor_menuitem"
               name="Profesor"
               sequence="1"
               parent="escuela_root"

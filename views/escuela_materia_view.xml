@@ -8,7 +8,7 @@
                 <sheet>
                     <group>
                         <field name="nombre"/>
-                        <field name="edad"/>
+                        <field name="descripcion"/>
                     </group>
                 </sheet>
             </form>
@@ -22,13 +22,13 @@
         <field name="arch" type="xml">
             <tree string="materia Tree">
                 <field name="nombre"/>
-                <field name="edad"/>
+                <field name="descripcion"/>
             </tree>
         </field>
     </record>
 
     <!--materia Action view-->
-    <record id="escuela_materia_action_view" model="ir.actions.act_window">
+    <record id="action_escuela_materia" model="ir.actions.act_window">
         <field name="name"></field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">escuela.materia</field>
@@ -41,9 +41,9 @@
     </record>
 
     <!--Menus-->
-    <menuitem id="materia"
+    <menuitem id="escuela_materia_menuitem"
               name="Materia"
-              sequence="1"
               parent="materias_root"
-              action="action_materia"/>
+              action="action_escuela_materia"
+              sequence="1"/>
 </odoo>
