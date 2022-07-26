@@ -30,7 +30,7 @@
     </record>
 
     <!--Escuela Profesor Action view-->
-    <record id="escuela_profesor_action_view" model="ir.actions.act_window">
+    <record id="action_escuela_profesor" model="ir.actions.act_window">
         <field name="name"></field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">escuela.profesor</field>
@@ -48,7 +48,7 @@
               name="Profesor"
               sequence="1"
               parent="escuela_root"
-              action="action_profesor"/>
+              action="action_escuela_profesor"/>
 
 </odoo>
 

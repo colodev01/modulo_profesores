@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 
 class EscuelaProfesor(models.Model):
@@ -13,8 +13,9 @@ class EscuelaProfesor(models.Model):
     materia_id = fields.Many2one(
         comodel_name="escuela.materia", string="Materia"
     )
+
     @api.constrains("legajo")
     def check_legajo(self):
         legajos = self.search([]).mapped("legajo")
         if self.legajo and self.legajo in legajos:
-            rause exceptions.ValidationError("Existe legajo doble")
+            raise exceptions.ValidationError("Existe legajo doble")
