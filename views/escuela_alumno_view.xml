@@ -1,0 +1,50 @@
+<odoo>
+    <!--Escuela Alumno Form view-->
+    <record id="escuela_alumno_form_view" model="ir.ui.view">
+        <field name="name">Escuela Alumno Form</field>
+        <field name="model">escuela.alumno</field>
+        <field name="arch" type="xml">
+            <form string="Escuela Alumno Form">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="edad"/>
+                    </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+
+    <!--Escuela Alumno Tree view-->
+    <record id="escuela_alumno_tree_view" model="ir.ui.view">
+        <field name="name">Escuela Alumno Tree</field>
+        <field name="model">escuela.alumno</field>
+        <field name="arch" type="xml">
+            <tree string="Escuela Alumno Tree">
+                <field name="nombre"/>
+                <field name="edad"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Escuela Alumno Action view-->
+    <record id="action_escuela_alumno" model="ir.actions.act_window">
+        <field name="name"></field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">escuela.alumno</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Crear nuevos alumnos
+            </p>
+        </field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="escuela_root" name="Escuela" sequence="0"/>
+    <menuitem id="escuela_alumno_menuitem"
+              name="Alumno"
+              sequence="1"
+              parent="escuela_root"
+              action="action_escuela_alumno"/>
+</odoo>
