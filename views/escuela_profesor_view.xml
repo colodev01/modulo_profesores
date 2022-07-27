@@ -32,7 +32,7 @@
 
     <!--Escuela Profesor Action view-->
     <record id="action_escuela_profesor" model="ir.actions.act_window">
-        <field name="name"></field>
+        <field name="name">Profesores</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">escuela.profesor</field>
         <field name="view_mode">tree,form</field>

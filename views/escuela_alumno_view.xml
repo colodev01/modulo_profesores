@@ -29,7 +29,7 @@
 
     <!--Escuela Alumno Action view-->
     <record id="action_escuela_alumno" model="ir.actions.act_window">
-        <field name="name"></field>
+        <field name="name">Alumnos</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">escuela.alumno</field>
         <field name="view_mode">tree,form</field>

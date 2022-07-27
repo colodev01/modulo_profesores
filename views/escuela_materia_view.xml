@@ -29,7 +29,7 @@
 
     <!--materia Action view-->
     <record id="action_escuela_materia" model="ir.actions.act_window">
-        <field name="name"></field>
+        <field name="name">Materias</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">escuela.materia</field>
         <field name="view_mode">tree,form</field>

@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class EscuelaInscripcion(models.Model):
     _name = 'escuela.inscripcion'
 
+    nota = fields.Float(string="Nota final", default=0)
     fecha_inscripcion = fields.Date(string="Fecha de Inscripcion")
 
     alumno_id = fields.Many2one(
@@ -14,6 +15,6 @@ class EscuelaInscripcion(models.Model):
     materia_id = fields.Many2one(
         comodel_name="escuela.materia", string="Materia"
     )
-    # Realizar vistas de modelo alumno, materia e inscripcion
+
 
 
