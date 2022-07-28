@@ -1,0 +1,54 @@
+<odoo>
+    <!--Escuela Inscripcion Form view-->
+    <record id="escuela_inscripcion_form_view" model="ir.ui.view">
+        <field name="name">Escuela Inscripcion Form</field>
+        <field name="model">escuela.inscripcion</field>
+        <field name="arch" type="xml">
+            <form string="Escuela Inscripcion Form">
+                <sheet>
+                    <group>
+                        <field name="alumno_id" widget="many2one_tags"/>
+                        <field name="materia_id" widget="many2one_tags"/>
+                        <field name="fecha_inscripcion"/>
+                        <field name="nota"/>
+                    </group>
+                </sheet>
+            </form>
+      </field>
+    </record>
+
+    <!--Escuela Inscripcion Tree view-->
+    <record id="escuela_inscripcion_tree_view" model="ir.ui.view">
+        <field name="name">Escuela Inscripcion Tree</field>
+        <field name="model">escuela.inscripcion</field>
+        <field name="arch" type="xml">
+            <tree string="Escuela Inscripcion Tree">
+                <field name="alumno_id" widget="many2one_tags"/>
+                <field name="materia_id" widget="many2one_tags"/>
+                <field name="fecha_inscripcion"/>
+                <field name="nota"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Escuela Inscripcion Action view-->
+    <record id="action_escuela_inscripcion" model="ir.actions.act_window">
+        <field name="name">Inscripciones</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">escuela.inscripcion</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Crear nuevas Inscripciones
+            </p>
+        </field>
+    </record>
+
+    <!--Menus-->
+    <menuitem id="escuela_root" name="Escuela" sequence="0"/>
+    <menuitem id="escuela_inscripcion_menuitem"
+              name="Inscripcion"
+              sequence="1"
+              parent="escuela_root"
+              action="action_escuela_inscripcion"/>
+</odoo>

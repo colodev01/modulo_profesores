@@ -8,6 +8,7 @@
                 <sheet>
                     <group>
                         <field name="nombre"/>
+                        <field name="apellido"/>
                         <field name="edad"/>
                     </group>
                 </sheet>
@@ -21,7 +22,9 @@
         <field name="model">escuela.alumno</field>
         <field name="arch" type="xml">
             <tree string="Escuela Alumno Tree">
-                <field name="nombre"/>
+                <!--<field name="nombre"/>-->
+                <!--<field name="apellido"/>-->
+                <field name="nombre_completo" readonly="1"/>
                 <field name="edad"/>
             </tree>
         </field>

@@ -8,8 +8,8 @@
                 <sheet>
                     <group>
                         <field name="nombre"/>
+                        <field name="apellido"/>
                         <field name="edad"/>
-                        <!-- <field name="legajo"/> -->
                         <field name="materia_id" widget="many2one_tags"/>
                     </group>
                 </sheet>
@@ -23,7 +23,7 @@
         <field name="model">escuela.profesor</field>
         <field name="arch" type="xml">
             <tree string="Escuela Profesor Tree">
-                <field name="nombre"/>
+                <field name="nombre_completo" readonly="1"/>
                 <field name="edad"/>
                 <field name="legajo"/>
             </tree>

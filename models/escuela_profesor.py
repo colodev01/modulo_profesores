@@ -6,14 +6,25 @@ from odoo import models, fields, api, exceptions
 class EscuelaProfesor(models.Model):
     _name = 'escuela.profesor'
     _description = 'Profesores'
+    _rec_name = 'nombre_completo'
 
-    nombre = fields.Char(string="Profesor", default="Jose Perez")
+    nombre = fields.Char(string="Nombre")
+    apellido = fields.Char(string="Apellido")
     edad = fields.Integer()
     legajo = fields.Integer()
+    nombre_completo = fields.Char(string="Apellido y nombre", compute="set_full_name")
 
     materia_id = fields.Many2many(
         comodel_name="escuela.materia", string="Materia"
     )
+
+    @api.onchange('nombre', 'apellido')
+    def set_full_name(self):
+        for profesor in self:
+            if profesor.nombre and profesor.apellido:
+                profesor.nombre_completo = str(profesor.apellido) + ', ' + str(profesor.nombre)
+            else:
+                profesor.nombre_completo = ''
 
     def get_nuevo_legajo(self):
         ultimo_profesor = self.env["escuela.profesor"].search([], order="id desc", limit=1)

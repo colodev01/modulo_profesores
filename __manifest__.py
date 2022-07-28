@@ -6,7 +6,7 @@
         Gestion de Profesores""",
 
     'description': """
-        Gestionar profesores y materias
+        Gestión de sistema de escuela básica
     """,
 
     'author': "ADEN",
@@ -26,7 +26,8 @@
         # 'security/ir.model.access.csv',
         'views/escuela_alumno_view.xml',
         'views/escuela_profesor_view.xml',
-        'views/escuela_materia_view.xml'
+        'views/escuela_materia_view.xml',
+        'views/escuela_inscripcion_view.xml'
     ],
     'installable': True,
     'application': True

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class EscuelaInscripcion(models.Model):
@@ -15,6 +15,9 @@ class EscuelaInscripcion(models.Model):
     materia_id = fields.Many2one(
         comodel_name="escuela.materia", string="Materia"
     )
+
+    # Nota: crear modelo y vista de 'estado_inscripcion', y tomar de referencia
+    # ./crm_aden_estudiante
 
 
 
