@@ -22,6 +22,8 @@ class EscuelaProfesor(models.Model):
     def set_full_name(self):
         for profesor in self:
             if profesor.nombre and profesor.apellido:
+                profesor.nombre = profesor.nombre.title()
+                profesor.apellido = profesor.apellido.title()
                 profesor.nombre_completo = str(profesor.apellido) + ', ' + str(profesor.nombre)
             else:
                 profesor.nombre_completo = ''
@@ -33,13 +35,12 @@ class EscuelaProfesor(models.Model):
         """
         profesores = self.env["escuela.profesor"].search([], order="id desc", limit=1)
         legajoAlto=0
-        if len(profesores)>0:
-            for i in range(len(profesores)):
-                if legajoAlto < profesores[i].legajo:
-                    legajoAlto = profesores[i].legajo
-        return legajoAlto+1
+            if len(profesores)>0:
+                for i in range(len(profesores)):
+                    if legajoAlto < profesores[i].legajo:
+                        legajoAlto = profesores[i].legajo
+            return legajoAlto+1
         """
-
 
     @api.model
     def create(self, values):

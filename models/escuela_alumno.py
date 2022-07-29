@@ -16,6 +16,8 @@ class EscuelaAlumno(models.Model):
     def set_full_name(self):
         for estudiante in self:
             if estudiante.nombre and estudiante.apellido:
+                estudiante.nombre = estudiante.nombre.title()
+                estudiante.apellido = estudiante.apellido.title()
                 estudiante.nombre_completo = str(estudiante.apellido) + ', ' + str(estudiante.nombre)
             else:
                 estudiante.nombre_completo = ''

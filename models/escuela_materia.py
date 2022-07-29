@@ -5,6 +5,7 @@ from odoo import models, fields, api
 
 class EscuelaMateria(models.Model):
     _name = 'escuela.materia'
+    _rec_name = 'nombre'
 
     nombre = fields.Char(string="Materia")
     descripcion = fields.Text(string="Descripcion")
