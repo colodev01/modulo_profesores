@@ -2,10 +2,14 @@
 
 from odoo import models, fields, api
 
+"""
 ESTADOS = [
     ('pendiente', 'Pendiente'),
-
+    ('libre', 'Libre'),
+    ('regular', 'Regular'),
+    ('aprobado', 'Aprobado')
 ]
+"""
 
 class EscuelaInscripcion(models.Model):
     _name = 'escuela.inscripcion'
